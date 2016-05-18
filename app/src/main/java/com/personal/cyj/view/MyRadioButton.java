@@ -20,6 +20,7 @@ public class MyRadioButton extends RadioButton {
     private Drawable mButtonDrawable;
     private int mButtonResource;
 
+    int res,resOn;
     public MyRadioButton(Context context) {
         super(context);
         this.context = context;
@@ -29,8 +30,9 @@ public class MyRadioButton extends RadioButton {
         super(context, attrs);
         this.context = context;
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyRadioSrc);
-        int resid = a.getResourceId(R.styleable.MyRadioSrc_imgSrc, 0);
-        setButtonDrawable(resid);
+        res = a.getResourceId(R.styleable.MyRadioSrc_img, 0);
+        resOn = a.getResourceId(R.styleable.MyRadioSrc_imgOn, 0);
+        setButtonDrawable(res);
     }
 
 
@@ -67,6 +69,14 @@ public class MyRadioButton extends RadioButton {
         refreshDrawableState();
     }
 
+    public void isCheck(boolean isCheck){
+        if(isCheck){
+            setButtonDrawable(resOn);
+        }else {
+            setButtonDrawable(res);
+        }
+    }
+
     // 核心代码部分
     @Override
     protected void onDraw(Canvas canvas) {
@@ -76,8 +86,8 @@ public class MyRadioButton extends RadioButton {
         if (buttonDrawable != null) {
             final int verticalGravity = getGravity()
                     & Gravity.VERTICAL_GRAVITY_MASK;
-            final int height = buttonDrawable.getIntrinsicHeight()-20;
-            final int width = buttonDrawable.getIntrinsicWidth()-20;
+            final int height = buttonDrawable.getIntrinsicHeight()-40;
+            final int width = buttonDrawable.getIntrinsicWidth()-40;
 
             int y = 0;
 

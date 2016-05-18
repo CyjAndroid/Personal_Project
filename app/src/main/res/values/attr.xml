@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="MyRadioSrc">
-        <attr name="imgSrc" format="reference"/>
-        <attr name="textSize" format="dimension"/>
+        <attr name="img" format="reference"/>
+        <attr name="imgOn" format="reference"/>
     </declare-styleable>
 </resources> 
