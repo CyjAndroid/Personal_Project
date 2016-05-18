@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cyj="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/titlelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <RadioGroup
+            android:id="@+id/tab_menu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#72B9DF"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal" >
+
+            <com.personal.cyj.view.MyRadioButton
+                android:id="@+id/title1"
+                android:gravity="center"
+                cyj:imgSrc="@drawable/p"
+                cyj:textSize="13sp"
+                style="@style/tab_style"
+                android:checked="true" />
+
+            <com.personal.cyj.view.MyRadioButton
+                android:id="@+id/title2"
+                android:gravity="center"
+                cyj:imgSrc="@drawable/p"
+                style="@style/tab_style"
+                android:checked="true" />
+
+            <com.personal.cyj.view.MyRadioButton
+                android:id="@+id/title3"
+                android:gravity="center"
+                cyj:imgSrc="@drawable/p"
+                style="@style/tab_style"
+                android:checked="true" />
+        </RadioGroup>
+    </LinearLayout>
+
+</RelativeLayout>
