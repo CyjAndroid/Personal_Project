@@ -1,53 +1,65 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.personal.cyj.viewgroup.DragLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cyj="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/draglayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent" >
-    </android.support.v4.view.ViewPager>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <include layout="@layout/drag_layout" />
+    </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/titlelayout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
 
-        <RadioGroup
-            android:id="@+id/group"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:background="@drawable/home_bg"
-            android:orientation="horizontal" >
+            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 
-            <com.personal.cyj.view.MyRadioButton
-                android:id="@+id/radio_home"
-                android:gravity="center"
-                cyj:img="@drawable/home"
-                cyj:imgOn="@drawable/home_on"
-                style="@style/tab_style"
-                android:checked="true" />
+        <LinearLayout
+            android:id="@+id/titlelayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
 
-            <com.personal.cyj.view.MyRadioButton
-                android:id="@+id/radio_find"
-                android:gravity="center"
-                cyj:img="@drawable/find"
-                cyj:imgOn="@drawable/find_on"
-                style="@style/tab_style"
-                android:checked="true" />
+            <RadioGroup
+                android:id="@+id/group"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/home_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
 
-            <com.personal.cyj.view.MyRadioButton
-                android:id="@+id/radio_my"
-                android:gravity="center"
-                cyj:img="@drawable/my"
-                cyj:imgOn="@drawable/my_on"
-                style="@style/tab_style"
-                android:checked="true" />
-        </RadioGroup>
-    </LinearLayout>
+                <com.personal.cyj.view.MyRadioButton
+                    android:id="@+id/radio_home"
+                    style="@style/tab_style"
+                    android:checked="true"
+                    android:gravity="center"
+                    cyj:img="@drawable/home"
+                    cyj:imgOn="@drawable/home_on" />
 
-</RelativeLayout>
+                <com.personal.cyj.view.MyRadioButton
+                    android:id="@+id/radio_find"
+                    style="@style/tab_style"
+                    android:checked="true"
+                    android:gravity="center"
+                    cyj:img="@drawable/find"
+                    cyj:imgOn="@drawable/find_on" />
+
+                <com.personal.cyj.view.MyRadioButton
+                    android:id="@+id/radio_my"
+                    style="@style/tab_style"
+                    android:checked="true"
+                    android:gravity="center"
+                    cyj:img="@drawable/my"
+                    cyj:imgOn="@drawable/my_on" />
+            </RadioGroup>
+        </LinearLayout>
+    </RelativeLayout>
+</com.personal.cyj.viewgroup.DragLayout>
